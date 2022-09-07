@@ -2,6 +2,7 @@ import React from "react";
 
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
+// previous code as it was...
 
 const Table = ({ data, showTask }) => (
   <div className="flex flex-col">
