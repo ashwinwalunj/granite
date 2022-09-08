@@ -4,7 +4,7 @@ class Task < ApplicationRecord
   validates :title, presence: true, length: { maximum: 50 }
   validates :slug, uniqueness: true
   validate :slug_not_changed
-
+  belongs_to :assigned_user, foreign_key: "assigned_user_id", class_name: "User"
   before_create :set_slug
 
   before_validation :print_set_title
