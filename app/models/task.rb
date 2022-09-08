@@ -10,6 +10,8 @@ class Task < ApplicationRecord
   before_validation :print_set_title
   before_validation :set_title, if: :title_not_present
   has_many :comments, dependent: :destroy
+  enum progress: { pending: "pending", completed: "completed" }
+  RESTRICTED_ATTRIBUTES = %i[title task_owner_id assigned_user_id]
 
   private
 
