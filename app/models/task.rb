@@ -9,6 +9,7 @@ class Task < ApplicationRecord
   belongs_to :task_owner, foreign_key: "task_owner_id", class_name: "User"
   before_validation :print_set_title
   before_validation :set_title, if: :title_not_present
+  has_many :comments, dependent: :destroy
 
   private
 

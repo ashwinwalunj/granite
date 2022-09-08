@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotUnique, with: :handle_record_not_unique
   rescue_from ActionController::ParameterMissing, with: :handle_api_error
   before_action :authenticate_user_using_x_auth_token
-  include Pundit::Authorization
-  rescue_from Pundit::NotAuthorizedError, with: :handle_authorization_error
+  # include Pundit::Authorization
+  # rescue_from Pundit::NotAuthorizedError, with: :handle_authorization_error
 
   private
 
