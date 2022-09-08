@@ -7,7 +7,22 @@ class Task < ApplicationRecord
 
   before_create :set_slug
 
+  before_validation :print_set_title
+  before_validation :set_title, if: :title_not_present
+
   private
+
+    def title_not_present
+      self.title.blank?
+      end
+
+    def set_title
+      self.title = "Pay electricity bill"
+    end
+
+    def print_set_title
+      puts self.title
+    end
 
     def set_slug
       title_slug = title.parameterize
