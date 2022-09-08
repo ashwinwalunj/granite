@@ -1,7 +1,4 @@
-en:
-  successfully_created: "%{entity} was successfully created!"
-  successfully_updated: "%{entity} was successfully updated!"
-  successfully_deleted: "%{entity} was successfully deleted!"
-  task:
-    slug:
-      immutable: "is immutable!"
+task:
+  slug:
+    immutable: "is immutable!"
+  not_found: "Couldn't find Task"
