@@ -6,7 +6,7 @@ class Task < ApplicationRecord
   validate :slug_not_changed
   belongs_to :assigned_user, foreign_key: "assigned_user_id", class_name: "User"
   before_create :set_slug
-
+  belongs_to :task_owner, foreign_key: "task_owner_id", class_name: "User"
   before_validation :print_set_title
   before_validation :set_title, if: :title_not_present
 
